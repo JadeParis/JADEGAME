@@ -12,7 +12,6 @@ public class CameraZoom : MonoBehaviour
     {
         if (col.tag == "Player")
         {
-            Debug.Log("Player has arrived!");
             currentPlayerCamera.SetActive(false);
             staticCamera.SetActive(true);
         }

@@ -10,19 +10,20 @@ public class MagicPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(Input.GetKey(KeyCode.LeftControl))
-        {
-            if (squareInstance == null)
-            {
-                squareInstance = Instantiate(squarePrefab, Vector3.zero, Quaternion.identity);
-            }
-        }
-       else
-        {
-            if (squareInstance != null)
-            {
-                Destroy(squareInstance);
-            }
-        }
+        //   if(Input.GetKey(KeyCode.LeftControl))
+        //    {
+        //        if (squareInstance == null)
+        //        {
+        //            squareInstance = Instantiate(squarePrefab, Vector3.zero, Quaternion.identity);
+        //        }
+        //    }
+        //   else
+        //    {
+        //        if (squareInstance != null)
+        //        {
+        //            Destroy(squareInstance);
+        //        }
+        //    }
+        //}
     }
 }
