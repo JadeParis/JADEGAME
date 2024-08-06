@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
 {
     public GameObject dialoguePanel;
-    public Text dialogueText;
+    public GameObject dialogueTextObject;
+    private TextMeshProUGUI dialogueText;
     public string[] dialogue;
     public string currentDialogue;
     private int index;
@@ -14,6 +16,11 @@ public class NPC : MonoBehaviour
     public float wordspeed;
     public bool playerIsClose;
     bool isTyping;
+
+    private void Start()
+    {
+        dialogueText = dialogueTextObject.GetComponent<TextMeshProUGUI>();
+    }
 
     // Update is called once per frame
     void Update()

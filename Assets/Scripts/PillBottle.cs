@@ -2,10 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PillBottle : MonoBehaviour
 {
+    Image spriteRenderer;
     public bool bottleOpen;
+
+    public Sprite openSprite;
+    public Sprite closeSprite;
+
+    private void Start()
+    {
+        spriteRenderer = GetComponent<Image>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -13,13 +23,15 @@ public class PillBottle : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             bottleOpen = !bottleOpen;
-            SeeSpooky(bottleOpen);
+            SeeSpooky();
         }
     }
 
-    void SeeSpooky(bool open)
+    void SeeSpooky()
     {
-        //if its open show the stuff for the visuals
-        //if it's false remove them
+        if (bottleOpen)
+            spriteRenderer.sprite = openSprite;
+        else
+            spriteRenderer.sprite = closeSprite;
     }
 }

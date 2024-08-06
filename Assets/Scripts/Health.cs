@@ -42,5 +42,14 @@ public class Health : MonoBehaviour
         }
     }
 
+    public void GainHealth()
+    {
+        health++;
+    }
+
+    public void LoseHealth()
+    {
+        health--;
+    }
 
 }
