@@ -11,16 +11,16 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 1f;
     public float jumpCooldown = 0.1f;
     public float jumpImpulse = 10f;
-    SpriteRenderer rend;
-    Vector2 moveInput;
-    TouchingDirections touchingDirections;
     private bool _isMoving = false;
     bool canJump;
-
     public bool canAttack;
     public float attackCoolDown;
     public bool attack1;
     public bool attack2;
+
+    SpriteRenderer rend;
+    Vector2 moveInput;
+    TouchingDirections touchingDirections;
 
     public bool IsMoving { get
         {
