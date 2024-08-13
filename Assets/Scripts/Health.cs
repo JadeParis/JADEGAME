@@ -47,7 +47,7 @@ public class Health : MonoBehaviour
         health++;
     }
 
-    public void LoseHealth()
+    public void LoseHealth(int v)
     {
         health--;
     }

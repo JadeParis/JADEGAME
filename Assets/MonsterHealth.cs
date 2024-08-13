@@ -4,45 +4,55 @@ using UnityEngine;
 
 public class MonsterHealth : MonoBehaviour
 {
+    public bool isDead;
+    Animator anim;
     public int health;
-    //teseting
-    //public GameObject parent;
+
+    private void Start()
+    {
+        
+        anim = GetComponent<Animator>();
+    }
 
 
     private void Update()
     {
-        if(health <= 0)
+        if(health <= 0 && !isDead)
         {
             Die();
+            isDead = true;
         }
     }
 
     public void Damage()
     {
-        //play hit animation
         health--;
     }
 
     public void Die()
     {
-        //play animation
-        //StartCoroutine(WaitForDeath());
+        if (anim != null)
+        {
+            anim.SetTrigger("monsterdeath");
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        //anim.Play("monsterdeath");
+    }
 
-        //testing
-        //Destroy(gameObject);
+    public void DestroyEnemy()
+    {
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "AttackCol");
+        if (collision.gameObject.tag == "AttackCol")
         {
             Damage();
         }
     }
-
-    //IEnumerator WaitForDeath()
-    //{
-    //   // yield return new WaitForSeconds(//aniamtion length))
-    //Destroy(gameObject)w;
-    //}
+   
 }

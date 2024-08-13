@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public float jumpCooldown = 0.1f;
     public float jumpImpulse = 10f;
     private bool _isMoving = false;
-    bool canJump;
+
     public bool canAttack;
     public float attackCoolDown;
     public bool attack1;
@@ -57,7 +57,6 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         rend = GetComponent<SpriteRenderer>();
         touchingDirections = GetComponent<TouchingDirections>();
-        canJump = true;
     }
 
     private void FixedUpdate()
@@ -79,16 +78,6 @@ public class PlayerController : MonoBehaviour
         else if(moveInput.x < 0)
         {
             rend.flipX = false;
-        }
-    }
-
-    public void OnJumps(InputAction.CallbackContext context)
-    {
-        if (touchingDirections.IsGrounded && canJump)
-        {
-            rb.AddForce(Vector2.up * jumpForce / 100);
-            canJump = false;
-            Invoke("JumpCooldown", jumpCooldown);
         }
     }
 
@@ -130,6 +119,7 @@ public class PlayerController : MonoBehaviour
         if (context.started && touchingDirections.IsGrounded)
         {
             animator.SetTrigger(AnimationStrings.jump);
+            rb.AddForce(Vector2.up * jumpForce / 100);
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
         }
     }
