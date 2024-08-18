@@ -454,8 +454,17 @@ MonoBehaviour:
   dialoguePanel: {fileID: 341449929}
   dialogueTextObject: {fileID: 610264454}
   dialogue:
-  - Oh.. Hello
-  - where are you going?
+  - Oh.. Hello Lucas
+  - Where are you off too? you're not thinking about leaving are you?
+  - I know you want to find your friend, but its too risky!
+  - The mutant out-break is getting out of hand!
+  - ...
+  - you're not gonna listen to me ... are you...
+  - ...
+  - FINE! Please be careful! bring your bat to protect yourself.
+  - 'And dont forget to take your pills, they''ll help you though obstacles. '
+  - ...
+  - Please come back home...
   currentDialogue: 
   wordspeed: 0.05
   playerIsClose: 0
@@ -3074,7 +3083,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -92, y: -135.32}
+  m_AnchoredPosition: {x: -92, y: -213}
   m_SizeDelta: {x: 539.9448, y: 1114.1577}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &341449931
@@ -3650,7 +3659,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382502309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1145.2928, y: -120.847404, z: -162.73135}
+  m_LocalPosition: {x: 2339.293, y: -120.847404, z: -162.73135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4826,7 +4835,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1774, y: -4.7, z: -309.8}
+  m_LocalPosition: {x: 2968, y: -4.7, z: -309.8}
   m_LocalScale: {x: 1, y: 1, z: 0.1811634}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5464,9 +5473,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 1729304654}
   dialogueTextObject: {fileID: 1640595396}
-  dialogue: []
+  dialogue:
+  - Hey kid, what are you doing out here all by yourself..?
+  - ...
+  - Not much of a talker ay?
+  - you look tired, here have some chips
+  - hopefully that'll make you feel better ay?
+  - 'Hey kid, there is a massive hole not to far from here. '
+  - Try to avoid it ay?
+  - but If you got those pills tho, you should be alright
+  - 'Be careful ay? '
   currentDialogue: 
-  wordspeed: 0
+  wordspeed: 0.05
   playerIsClose: 0
 --- !u!1 &551459160
 GameObject:
@@ -6030,7 +6048,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1014, y: 1025}
+  m_AnchoredPosition: {x: 1082, y: 1025}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &584166060
@@ -7415,7 +7433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 706343192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1313.13, y: 30.955, z: -155.8}
+  m_LocalPosition: {x: 1313.13, y: 30.955, z: -100}
   m_LocalScale: {x: 411.04358, y: 219.79611, z: 108.82891}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -8264,8 +8282,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 979, y: 882}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 1080, y: 998.8202}
+  m_SizeDelta: {x: 100, y: 106.846}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &742352445
 Animator:
@@ -9151,8 +9169,7 @@ MonoBehaviour:
   dialogue:
   - Wow this was ages ago...
   - 'He went missing around the same time the mutants started appering '
-  - We were close friends...
-  - 'oh well... '
+  - 'We were close friends... oh well... '
   currentDialogue: 
   wordspeed: 0.05
   playerIsClose: 0
@@ -10116,7 +10133,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891633432}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 171.73706, y: -25.86942, z: -131.63042}
+  m_LocalPosition: {x: 171.73706, y: -25.2631, z: -131.63042}
   m_LocalScale: {x: -3832.1165, y: 28.4852, z: 14.895002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10169,7 +10186,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 0.08964137, y: 2.0513632}
+  m_Size: {x: 0.08964137, y: 2.0939305}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
@@ -10439,7 +10456,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950944397}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -138, y: -21, z: -20.436188}
+  m_LocalPosition: {x: -138, y: -21, z: -102}
   m_LocalScale: {x: 262.23676, y: 114.26876, z: 100}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -10789,7 +10806,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976160984}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2160, y: -1.4537, z: -20.436188}
+  m_LocalPosition: {x: 2160, y: -1.4537, z: -97.5}
   m_LocalScale: {x: 283.08456, y: 123.35312, z: 107.95}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -14524,8 +14541,7 @@ MonoBehaviour:
   dialogueTextObject: {fileID: 1303840384}
   dialogue:
   - Oh! Harper's bracelet!
-  - I need to find her...
-  - Shes the only friend I have left...
+  - I need to find her... Shes the only friend I have left...
   currentDialogue: 
   wordspeed: 0.05
   playerIsClose: 0
@@ -16922,7 +16938,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464026966}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 527.7, y: -3.6, z: -20.436188}
+  m_LocalPosition: {x: 527.7, y: -3.6, z: -100}
   m_LocalScale: {x: 262.23676, y: 114.26876, z: 100}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -18966,7 +18982,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3834aa2fabc62aa46ae55ac0ba0e09c5, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 6806559416696702564, guid: 3834aa2fabc62aa46ae55ac0ba0e09c5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -20344,7 +20360,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -92, y: -161}
+  m_AnchoredPosition: {x: -92, y: -215}
   m_SizeDelta: {x: 539.9448, y: 1114.1577}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1729304656
@@ -25130,7 +25146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5132984390200929176, guid: a188e3e325ba7e2459721d3a7e462b6d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1774
+      value: 2968
       objectReference: {fileID: 0}
     - target: {fileID: 5132984390200929176, guid: a188e3e325ba7e2459721d3a7e462b6d, type: 3}
       propertyPath: m_LocalPosition.y
