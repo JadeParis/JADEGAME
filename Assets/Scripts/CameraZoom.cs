@@ -8,6 +8,11 @@ public class CameraZoom : MonoBehaviour
     public GameObject staticCamera;
     public GameObject currentPlayerCamera;
 
+    private void Start()
+    {
+        staticCamera.SetActive(false);
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Player")
