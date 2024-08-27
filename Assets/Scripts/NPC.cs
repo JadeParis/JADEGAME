@@ -9,7 +9,12 @@ public class NPC : MonoBehaviour
     public GameObject dialoguePanel;
     public GameObject dialogueTextObject;
     private TextMeshProUGUI dialogueText;
+
+    public string[] chosenDialogue;
+
     public string[] dialogue;
+    public string[] alternateDialogue;
+
     public string currentDialogue;
     private int index;
 
@@ -17,9 +22,13 @@ public class NPC : MonoBehaviour
     public bool playerIsClose;
     bool isTyping;
 
+    public bool hasGivenChips;
+    Health health;
+
     private void Start()
     {
         dialogueText = dialogueTextObject.GetComponent<TextMeshProUGUI>();
+        chosenDialogue = dialogue;
     }
 
     // Update is called once per frame
@@ -48,6 +57,13 @@ public class NPC : MonoBehaviour
         currentDialogue = string.Empty;
         index = 0;
         dialoguePanel.SetActive(false);
+
+        if (!hasGivenChips)
+        {
+            health.GainHealth();
+            chosenDialogue = alternateDialogue;
+            hasGivenChips = true;
+        }
     }
 
     IEnumerator Typing()
@@ -55,7 +71,7 @@ public class NPC : MonoBehaviour
         isTyping = true;
         while (isTyping)
         {
-            foreach (char letter in dialogue[index].ToCharArray())
+            foreach (char letter in chosenDialogue[index].ToCharArray())
             {
                 currentDialogue += letter;
                 dialogueText.text = currentDialogue;
@@ -68,7 +84,7 @@ public class NPC : MonoBehaviour
 
     public void NextLine()
     {
-        if(index < dialogue.Length -1)
+        if(index < chosenDialogue.Length -1)
         {
             StopAllCoroutines();
             currentDialogue = string.Empty;
@@ -88,6 +104,7 @@ public class NPC : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            health = other.GetComponent<Health>();
             playerIsClose = true; 
         }
     }

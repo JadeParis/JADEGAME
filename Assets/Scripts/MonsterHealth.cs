@@ -8,9 +8,10 @@ public class MonsterHealth : MonoBehaviour
     Animator anim;
     public int health;
 
+    [HideInInspector] public PlayerTransformation playerTransformation;
+
     private void Start()
     {
-        
         anim = GetComponent<Animator>();
     }
 
@@ -20,13 +21,17 @@ public class MonsterHealth : MonoBehaviour
         if(health <= 0 && !isDead)
         {
             Die();
-            isDead = true;
+            
         }
     }
 
     public void Damage()
     {
-        health--;
+        if (!isDead)
+        {
+            health--;
+        }
+
     }
 
     public void Die()
@@ -34,16 +39,37 @@ public class MonsterHealth : MonoBehaviour
         if (anim != null)
         {
             anim.Play("monsterdeath");
+            isDead = true;
+
+            playerTransformation.transformationIndex++;
+
+            if (playerTransformation.transformationIndex == 1)
+            {
+                playerTransformation.PlayCutscene();
+                //Replace this line with whatever plays the transformation cutscehene
+            }
+
+
+            playerTransformation.SwapController();
+            playerTransformation.enemies.Remove(this);
+
+            //play first cutscene
+
+            StartCoroutine(killHim());
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+
         //anim.Play("monsterdeath");
+    }
+
+    IEnumerator killHim()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 
     public void DestroyEnemy()
     {
+        Debug.Log("Plz Die");
         Destroy(gameObject);
     }
 

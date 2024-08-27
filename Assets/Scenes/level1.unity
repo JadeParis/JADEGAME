@@ -453,6 +453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 341449929}
   dialogueTextObject: {fileID: 610264454}
+  chosenDialogue: []
   dialogue:
   - Oh.. Hello Lucas
   - 'Where are you off too? '
@@ -471,9 +472,11 @@ MonoBehaviour:
   - Mum and dad would kill me if I let anything bad happend to you...
   - 'If they were still alive... '
   - please be carefull Lucas
+  alternateDialogue: []
   currentDialogue: 
   wordspeed: 0.05
   playerIsClose: 0
+  hasGivenChips: 0
 --- !u!114 &7310335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,6 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToShow: {fileID: 352859386}
+  pickupable: 0
 --- !u!1 &18239823
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,6 +899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToShow: {fileID: 930907365}
+  pickupable: 0
 --- !u!70 &55456441
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -925,11 +930,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 714086884}
   dialogueTextObject: {fileID: 1682507051}
+  chosenDialogue: []
   dialogue:
   - So loud...
+  alternateDialogue: []
   currentDialogue: 
   wordspeed: 0.05
   playerIsClose: 0
+  hasGivenChips: 0
 --- !u!1 &59998278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,6 +1307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToShow: {fileID: 2041037611}
+  pickupable: 0
 --- !u!70 &129398301
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1773,7 +1782,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 179049392}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2331,7 +2340,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1509535299}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -69.048}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3063,6 +3072,7 @@ Transform:
   m_Children:
   - {fileID: 3389935}
   - {fileID: 368185898}
+  - {fileID: 484453012}
   - {fileID: 1729157393}
   - {fileID: 529362986}
   - {fileID: 846516630}
@@ -3877,7 +3887,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382502309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1718.2928, y: -120.847404, z: -162.73135}
+  m_LocalPosition: {x: 885.29285, y: -120.847404, z: -162.73135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4428,7 +4438,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424231331}
   m_LocalRotation: {x: -0, y: -0, z: 0.9999063, w: -0.013689883}
-  m_LocalPosition: {x: 1876.9668, y: -12.9887, z: 196.74991}
+  m_LocalPosition: {x: 904.7, y: -12.9887, z: 196.74991}
   m_LocalScale: {x: -0.71152204, y: -0.71152204, z: -0.71152204}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4914,6 +4924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToShow: {fileID: 1766521567}
+  pickupable: 0
 --- !u!70 &459517637
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5019,6 +5030,90 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5132984390200929183, guid: a188e3e325ba7e2459721d3a7e462b6d, type: 3}
   m_PrefabInstance: {fileID: 5132984388773419821}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &484453011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 484453012}
+  - component: {fileID: 484453013}
+  m_Layer: 0
+  m_Name: wer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &484453012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484453011}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 97.19995, y: -29.387932, z: 154.72191}
+  m_LocalScale: {x: 7.2399, y: 7.2399, z: 7.2399}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 324888344}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &484453013
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484453011}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1823389361
+  m_SortingLayer: -1
+  m_SortingOrder: 6
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0.45882356, g: 0.3921569, b: 0.3137255, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &492303151
 GameObject:
   m_ObjectHideFlags: 0
@@ -5438,7 +5533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2347, y: -4.7, z: -309.8}
+  m_LocalPosition: {x: 1514, y: -4.7, z: -309.8}
   m_LocalScale: {x: 1, y: 1, z: 0.1811634}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5671,7 +5766,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 324888344}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &529362987
 SpriteRenderer:
@@ -6062,6 +6157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToShow: {fileID: 142656513}
+  pickupable: 0
 --- !u!114 &550441564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6076,19 +6172,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 1729304654}
   dialogueTextObject: {fileID: 1640595396}
+  chosenDialogue: []
   dialogue:
   - Hey kid, what are you doing out here all by yourself..?
   - ...
   - Not much of a talker ay?
-  - you look tired, here have some chips
+  - You dont look so good, here have some chips
   - hopefully that'll make you feel better ay?
   - 'Hey kid, there is a massive hole not to far from here. '
   - Try to avoid it ay?
   - but If you got those pills tho, you should be alright
   - 'Be careful ay? '
+  alternateDialogue: []
   currentDialogue: 
   wordspeed: 0.05
   playerIsClose: 0
+  hasGivenChips: 0
 --- !u!1 &551459160
 GameObject:
   m_ObjectHideFlags: 0
@@ -7214,7 +7313,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 324888344}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &645182049
 SpriteRenderer:
@@ -7352,103 +7451,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &657364896
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 657364897}
-  - component: {fileID: 657364900}
-  - component: {fileID: 657364899}
-  - component: {fileID: 657364898}
-  m_Layer: 5
-  m_Name: smoke
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &657364897
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 657364896}
-  m_LocalRotation: {x: -0, y: -0, z: -0.08043642, w: 0.9967598}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0364983, y: 1.241566, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1509535299}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -9.227}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.6, y: -22.3}
-  m_SizeDelta: {x: 128.41272, y: 107.56035}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &657364898
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 657364896}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a6a5f915b2000064e8d5dbddeeabc50e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &657364899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 657364896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.49803922}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dd25b9230484450498735756dfd278f0, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &657364900
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 657364896}
-  m_CullTransparentMesh: 1
 --- !u!1 &670607109
 GameObject:
   m_ObjectHideFlags: 3
@@ -7802,6 +7804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   health: 8
+  playerTransformation: {fileID: 0}
 --- !u!114 &681831238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7872,6 +7875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToShow: {fileID: 1705005914}
+  pickupable: 0
 --- !u!70 &682359253
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -7989,7 +7993,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 324888344}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &697957948
 SpriteRenderer:
@@ -14728,6 +14732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToShow: {fileID: 1003350494}
+  pickupable: 0
 --- !u!70 &803542660
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -14775,13 +14780,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 1334403545}
   dialogueTextObject: {fileID: 1501656916}
+  chosenDialogue: []
   dialogue:
   - Wow this was ages ago...
   - 'He went missing around the same time the mutants started appering '
   - 'We were close friends... oh well... '
+  alternateDialogue: []
   currentDialogue: 
   wordspeed: 0.05
   playerIsClose: 0
+  hasGivenChips: 0
 --- !u!1 &816033591
 GameObject:
   m_ObjectHideFlags: 0
@@ -15210,7 +15218,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 324888344}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &846516631
 SpriteRenderer:
@@ -16404,6 +16412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToShow: {fileID: 1196663048}
+  pickupable: 0
 --- !u!70 &965681550
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -17008,7 +17017,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977406686}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1179.4, y: -10.2, z: 60.844116}
+  m_LocalPosition: {x: 2801.8, y: -13, z: 60.844116}
   m_LocalScale: {x: 60.605286, y: 31.28176, z: 31.28176}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17029,6 +17038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToShow: {fileID: 1734377056}
+  pickupable: 0
 --- !u!70 &977406689
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -19116,7 +19126,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135944891}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -19483,6 +19493,82 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1151570807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1151570810}
+  - component: {fileID: 1151570809}
+  - component: {fileID: 1151570808}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1151570808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151570807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7372549, g: 0.39607847, b: 0.3137255, a: 0.16862746}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: ccfd27f1da2a5c640bf651a2c2e29612, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1151570809
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151570807}
+  m_CullTransparentMesh: 1
+--- !u!224 &1151570810
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151570807}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -4.0177}
+  m_LocalScale: {x: 1.2443943, y: 1.543443, z: 0.79719007}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1509535299}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2.2279053, y: 2.1}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1174801443
 GameObject:
   m_ObjectHideFlags: 0
@@ -19571,7 +19657,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 324888344}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1180524552
 SpriteRenderer:
@@ -20675,6 +20761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToShow: {fileID: 574241770}
+  pickupable: 0
 --- !u!70 &1261041255
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -20705,12 +20792,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 675780089}
   dialogueTextObject: {fileID: 1303840384}
+  chosenDialogue: []
   dialogue:
   - Oh! Harper's bracelet!
   - I need to find her... Shes the only friend I have left...
+  alternateDialogue: []
   currentDialogue: 
   wordspeed: 0.05
   playerIsClose: 0
+  hasGivenChips: 0
 --- !u!1 &1285253611
 GameObject:
   m_ObjectHideFlags: 0
@@ -21366,6 +21456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToShow: {fileID: 860697923}
+  pickupable: 0
 --- !u!4 &1325581171
 Transform:
   m_ObjectHideFlags: 0
@@ -21397,13 +21488,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 526168089}
   dialogueTextObject: {fileID: 996540762}
+  chosenDialogue: []
   dialogue:
   - I should see if those pills work
   - Im too tired to fight these mutants right now...
   - '*press "Left Ctrl" to reveal and hide platforms*'
+  alternateDialogue: []
   currentDialogue: 
   wordspeed: 0.05
   playerIsClose: 0
+  hasGivenChips: 0
 --- !u!1 &1329498655
 GameObject:
   m_ObjectHideFlags: 0
@@ -22072,7 +22166,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 324888344}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1390694827
 SpriteRenderer:
@@ -22885,6 +22979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToShow: {fileID: 2140426416}
+  pickupable: 0
 --- !u!70 &1437245801
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -24071,8 +24166,8 @@ RectTransform:
   m_LocalScale: {x: 8.163875, y: 4.6794534, z: 7.9647555}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 657364897}
   - {fileID: 216515300}
+  - {fileID: 1151570810}
   m_Father: {fileID: 2098091977}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25109,7 +25204,7 @@ MonoBehaviour:
   openSprite: {fileID: 21300000, guid: ae1b4f46982bb3e4ba5700b2806dce5e, type: 3}
   closeSprite: {fileID: 21300000, guid: 0b0613fa3a5340a478de1e7ae51343ed, type: 3}
   okyspooky: {fileID: 1509535301}
-  smoke: {fileID: 657364899}
+  smoke: {fileID: 1151570808}
   smoke2: {fileID: 216515297}
 --- !u!1 &1600162790
 GameObject:
@@ -26372,6 +26467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToShow: {fileID: 707977293}
+  pickupable: 0
 --- !u!70 &1680198204
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -26553,7 +26649,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 324888344}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1685119076
 SpriteRenderer:
@@ -27102,7 +27198,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1721502276}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -27163,7 +27259,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 324888344}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1729157394
 SpriteRenderer:
@@ -29702,6 +29798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToShow: {fileID: 977002025}
+  pickupable: 0
 --- !u!70 &1879420760
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -29732,6 +29829,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 2078945466}
   dialogueTextObject: {fileID: 1743747609}
+  chosenDialogue: []
   dialogue:
   - Woah! thats a dead man
   - 'Wait...Mr Austin? '
@@ -29741,9 +29839,11 @@ MonoBehaviour:
   - 'Thats not funny '
   - ...
   - Never liked you though
+  alternateDialogue: []
   currentDialogue: 
   wordspeed: 0.05
   playerIsClose: 0
+  hasGivenChips: 0
 --- !u!1 &1883358656
 GameObject:
   m_ObjectHideFlags: 0
@@ -29793,6 +29893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToShow: {fileID: 1187740300}
+  pickupable: 1
 --- !u!70 &1883358659
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -30949,7 +31050,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012224043}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -31246,7 +31347,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041037611}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.184, y: 0.234, z: -1.9450351}
+  m_LocalPosition: {x: -26.860126, y: 0.234, z: -1.9450351}
   m_LocalScale: {x: 0.060869556, y: 0.08261146, z: 0.08261146}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32162,7 +32263,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099311715}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -32640,6 +32741,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 795340411323152606, guid: a188e3e325ba7e2459721d3a7e462b6d, type: 3}
+      propertyPath: m_Size.x
+      value: 26.390068
+      objectReference: {fileID: 0}
+    - target: {fileID: 795340411323152606, guid: a188e3e325ba7e2459721d3a7e462b6d, type: 3}
+      propertyPath: m_Offset.x
+      value: -2.3186827
+      objectReference: {fileID: 0}
     - target: {fileID: 2550063601059813247, guid: a188e3e325ba7e2459721d3a7e462b6d, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 14
@@ -32726,7 +32835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5132984390200929176, guid: a188e3e325ba7e2459721d3a7e462b6d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2347
+      value: 1514
       objectReference: {fileID: 0}
     - target: {fileID: 5132984390200929176, guid: a188e3e325ba7e2459721d3a7e462b6d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -32851,14 +32960,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  numOfHearts: 0
-  hearts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  heartAnimators: []
+  numOfHearts: 5
+  emptyHearts:
+  - {fileID: 1135944893}
+  - {fileID: 2012224045}
+  - {fileID: 1721502278}
+  - {fileID: 179049394}
+  - {fileID: 2099311717}
+  fullHearts:
+  - {fileID: 1018349427}
+  - {fileID: 514055234}
+  - {fileID: 1108191103}
+  - {fileID: 794432580}
+  - {fileID: 1823231481}
+--- !u!114 &5132984388773419836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470500888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e1823e5eb5782a41ad61e2d8a817c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transformationIndex: 0
+  enemies:
+  - {fileID: 681831237}
+  controllers:
+  - {fileID: 9100000, guid: b0fc96926260b4b4da36942e4a268f6e, type: 2}
+  - {fileID: 9100000, guid: df2156059021ac347b39b3de59fc393e, type: 2}
 --- !u!1001 &7419038915971490319
 PrefabInstance:
   m_ObjectHideFlags: 0

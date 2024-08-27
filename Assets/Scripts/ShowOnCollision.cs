@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class ShowOnCollision : MonoBehaviour
 {
-    public GameObject objectToShow;  // The GameObject that will be shown upon collision
+    public GameObject objectToShow;
+    public bool pickupable; // The GameObject that will be shown upon collision
+    bool canPickup;
+
+    Health health;
 
     void Start()
     {
@@ -12,6 +16,16 @@ public class ShowOnCollision : MonoBehaviour
         if (objectToShow != null)
         {
             objectToShow.SetActive(false);
+        }
+    }
+
+    void Update()
+    {
+        // Check if the "F" key is pressed
+        if (Input.GetKeyDown(KeyCode.F) && canPickup && pickupable)
+        {
+            health.GainHealth();
+            Destroy(gameObject);
         }
     }
 
@@ -23,8 +37,9 @@ public class ShowOnCollision : MonoBehaviour
             // Show the GameObject
             if (objectToShow != null)
             {
-                objectToShow.SetActive(true);
-                Debug.Log("show image");
+               objectToShow.SetActive(true);
+               health = collision.GetComponent<Health>();
+               canPickup = true;
             }
         }
     }
@@ -38,7 +53,7 @@ public class ShowOnCollision : MonoBehaviour
             if (objectToShow != null)
             {
                 objectToShow.SetActive(false);
-                Debug.Log("hide image");
+                canPickup = false;
             }
         }
     }

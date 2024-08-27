@@ -8,18 +8,20 @@ public class Health : MonoBehaviour
     public int health;
     public int numOfHearts;
 
-    public GameObject[] hearts; // Change from Image[] to GameObject[]
-    public Animator[] heartAnimators; // Array of animators corresponding to each heart
+    public Image[] emptyHearts; // Change from Image[] to GameObject[]
+
+    public Image[] fullHearts;
+    Animator[] heartAnimators; // Array of animators corresponding to each heart
 
     void Start()
     {
         // Initialize animators if not assigned
         if (heartAnimators.Length == 0)
         {
-            heartAnimators = new Animator[hearts.Length];
-            for (int i = 0; i < hearts.Length; i++)
+            heartAnimators = new Animator[fullHearts.Length];
+            for (int i = 0; i < fullHearts.Length; i++)
             {
-                heartAnimators[i] = hearts[i].GetComponent<Animator>();
+                heartAnimators[i] = fullHearts[i].GetComponent<Animator>();
             }
         }
     }
@@ -31,24 +33,25 @@ public class Health : MonoBehaviour
             health = numOfHearts;
         }
 
-        for (int i = 0; i < hearts.Length; i++)
+        if (heartAnimators.Length > 0)
         {
-            if (i < numOfHearts)
+            for (int i = 0; i < heartAnimators.Length; i++)
             {
-                hearts[i].SetActive(true);
-                Animator animator = heartAnimators[i];
-                if (i < health)
+                if (i < numOfHearts)
                 {
-                    animator.SetBool("IsFull", true);
+                    if (i < health)
+                    {
+                        emptyHearts[i].enabled = false;
+                        heartAnimators[i].SetBool("IsFull", true);
+                        fullHearts[i].enabled = true;
+                    }
+                    else
+                    {
+                        heartAnimators[i].SetBool("IsFull", false);
+                        emptyHearts[i].enabled = true;
+                        fullHearts[i].enabled = false;
+                    }
                 }
-                else
-                {
-                    animator.SetBool("IsFull", false);
-                }
-            }
-            else
-            {
-                hearts[i].SetActive(false);
             }
         }
     }
