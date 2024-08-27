@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class PlayerTransformation : MonoBehaviour
@@ -8,7 +7,7 @@ public class PlayerTransformation : MonoBehaviour
     public int transformationIndex;
 
     public List<MonsterHealth> enemies;
-    public AnimatorController[] controllers;
+    //public AnimatorController[] controllers;
 
     Animator currentAnim;
 
@@ -24,7 +23,7 @@ public class PlayerTransformation : MonoBehaviour
 
     public void SwapController()
     {
-        currentAnim.runtimeAnimatorController = controllers[transformationIndex];
+        //currentAnim.runtimeAnimatorController = controllers[transformationIndex];
     }
 
     public void PlayCutscene()
