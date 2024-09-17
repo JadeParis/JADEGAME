@@ -7,7 +7,7 @@ public class PlayerTransformation : MonoBehaviour
     public int transformationIndex;
 
     public List<MonsterHealth> enemies;
-    //public AnimatorController[] controllers;
+    public RuntimeAnimatorController[] controllers;
 
     Animator currentAnim;
 
@@ -21,9 +21,11 @@ public class PlayerTransformation : MonoBehaviour
         }
     }
 
+
+    [ContextMenu("SwapSprite")]
     public void SwapController()
     {
-        //currentAnim.runtimeAnimatorController = controllers[transformationIndex];
+        currentAnim.runtimeAnimatorController = controllers[transformationIndex];
     }
 
     public void PlayCutscene()

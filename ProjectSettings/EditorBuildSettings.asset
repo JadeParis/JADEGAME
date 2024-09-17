@@ -20,14 +20,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/level4.unity
     guid: a8ace31dc13dfe841a10e875c866cdf5
-  - enabled: 1
-    path: Assets/Scenes/CONTROLS.Unity
-    guid: 816e7b935c5949e4b8bdae25b0eb6f9a
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/BAD ENDING.Unity
     guid: ba17b24090c4d85438804a1a7593f952
   - enabled: 1
-    path: Assets/Scenes/monster1.Unity
+    path: Assets/Scenes/Mutants.Unity
     guid: 56aa7ae34c4ce6043b73a9f1b83d11a6
   - enabled: 1
     path: Assets/Scenes/monster2.Unity

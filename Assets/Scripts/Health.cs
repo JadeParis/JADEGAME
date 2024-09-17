@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
     public Image[] emptyHearts; // Change from Image[] to GameObject[]
 
     public Image[] fullHearts;
-    Animator[] heartAnimators; // Array of animators corresponding to each heart
+    public Animator[] heartAnimators; // Array of animators corresponding to each heart
 
     void Start()
     {

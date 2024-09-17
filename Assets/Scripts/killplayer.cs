@@ -21,9 +21,11 @@ public class killplayer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if( other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             player.transform.position = respawnPoint.position;
+
+            player.GetComponent<Health>().LoseHealth(1);
         }
     }
 

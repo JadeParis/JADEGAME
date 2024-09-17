@@ -25,6 +25,8 @@ public class NPC : MonoBehaviour
     public bool hasGivenChips;
     Health health;
 
+    public bool canGiveChips;
+
     private void Start()
     {
         dialogueText = dialogueTextObject.GetComponent<TextMeshProUGUI>();
@@ -45,9 +47,11 @@ public class NPC : MonoBehaviour
             {
                 dialoguePanel.SetActive(true);
                 StartCoroutine(Typing());
+
             }
         }
     }
+
 
     public void zeroText()
     {
@@ -58,12 +62,8 @@ public class NPC : MonoBehaviour
         index = 0;
         dialoguePanel.SetActive(false);
 
-        if (!hasGivenChips)
-        {
-            health.GainHealth();
-            chosenDialogue = alternateDialogue;
-            hasGivenChips = true;
-        }
+        chosenDialogue = alternateDialogue;
+
     }
 
     IEnumerator Typing()
@@ -96,6 +96,13 @@ public class NPC : MonoBehaviour
         else
         {
             zeroText();
+
+            if (!hasGivenChips && canGiveChips)
+            {
+                Debug.Log("chips!");
+                health.GainHealth();
+                hasGivenChips = true;
+            }
         }
 
     }
