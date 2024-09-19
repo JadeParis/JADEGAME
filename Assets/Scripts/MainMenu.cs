@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
 
     public void Controls()
     {
-        SceneManager.LoadScene(10);
+        SceneManager.LoadScene(11);
     }
 
     public void BackTitle()
@@ -29,19 +29,24 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(6);
     }
 
-    public void Mutants2()
+    public void Mutants1()
     {
         SceneManager.LoadScene(7);
     }
 
-    public void Mutants3()
+    public void Mutants2()
     {
         SceneManager.LoadScene(8);
     }
 
-    public void Mutants4()
+    public void Mutants3()
     {
         SceneManager.LoadScene(9);
+    }
+
+    public void Mutants4()
+    {
+        SceneManager.LoadScene(10);
     }
 
 }

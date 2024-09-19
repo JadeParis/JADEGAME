@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Mutants0.Unity
     guid: 56aa7ae34c4ce6043b73a9f1b83d11a6
   - enabled: 1
+    path: Assets/Scenes/Mutants1.Unity
+    guid: c9dbffd598c92674fb86a5997cdea207
+  - enabled: 1
     path: Assets/Scenes/Mutant2.Unity
     guid: f092bdff3665a29419f5df661e9033a3
   - enabled: 1
