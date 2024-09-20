@@ -10,18 +10,25 @@ public class MonsterHealth : MonoBehaviour
 
     [HideInInspector] public PlayerTransformation playerTransformation;
 
+    private Collider2D monsterCollider;
+    private SpriteRenderer spriteRenderer;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
+        monsterCollider = GetComponent<Collider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
 
     private void Update()
     {
-        if(health <= 0 && !isDead)
+        // Ensure health does not go below 0 and check if the monster is dead
+        health = Mathf.Clamp(health, 0, int.MaxValue);
+
+        if (health <= 0 && !isDead)
         {
             Die();
-            
         }
     }
 
@@ -30,22 +37,32 @@ public class MonsterHealth : MonoBehaviour
         if (!isDead)
         {
             health--;
+            health = Mathf.Clamp(health, 0, int.MaxValue);
+            if (health <= 0)
+            {
+                Die();
+            }
         }
 
     }
 
     public void Die()
     {
-        if (anim != null)
+        if (anim != null && !isDead)
         {
-            anim.Play("monsterdeath");
             isDead = true;
+            anim.Play("monsterdeath");
 
-            playerTransformation.transformationIndex++;
+            if (monsterCollider != null) monsterCollider.enabled = false;
 
-            if (playerTransformation.transformationIndex == 1)
+            if (playerTransformation != null)
             {
-                playerTransformation.PlayCutscene();
+               playerTransformation.transformationIndex++;
+
+                if (playerTransformation.transformationIndex == 1)
+                {
+                    playerTransformation.PlayCutscene();
+                }
                 //Replace this line with whatever plays the transformation cutscehene
             }
 
@@ -57,13 +74,19 @@ public class MonsterHealth : MonoBehaviour
 
             StartCoroutine(killHim());
         }
-
+    
+        else if (anim == null)
+        {
+            Debug.LogError("Why the fuck are you not animating!");
+        }
+    
         //anim.Play("monsterdeath");
     }
 
     IEnumerator killHim()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
+        Debug.Log("pleasefuckingdie");
         Destroy(gameObject);
     }
 
@@ -75,7 +98,7 @@ public class MonsterHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "AttackCol")
+        if (!isDead && collision.gameObject.tag == "AttackCol")
         {
             Damage();
         }
