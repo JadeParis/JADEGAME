@@ -16,7 +16,7 @@ public class Monster_1 : MonoBehaviour
     float timer;
     public float cooldownTime = 3;
 
-
+    MonsterHealth monsterHealth;
     float rand;
 
     public Health player;
@@ -36,14 +36,19 @@ public class Monster_1 : MonoBehaviour
     {
         player = FindObjectOfType<Health>();
         anim = GetComponent<Animator>();
+        monsterHealth = GetComponent<MonsterHealth>();  
 
         originalPosition = transform.position;
     }
 
     private void Update()
     {
-        distanceToPlayer = Vector2.Distance(player.transform.position, transform.position);
-        HandleState();
+        if (!monsterHealth.isDead)
+        {
+            distanceToPlayer = Vector2.Distance(player.transform.position, transform.position);
+            HandleState();
+        }
+
     }
 
     void HandleState()

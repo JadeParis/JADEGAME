@@ -51,13 +51,14 @@ public class MonsterHealth : MonoBehaviour
         if (anim != null && !isDead)
         {
             isDead = true;
-            anim.Play("monsterdeath");
+            anim.SetBool("die", true);
 
             if (monsterCollider != null) monsterCollider.enabled = false;
 
             if (playerTransformation != null)
             {
-               playerTransformation.transformationIndex++;
+                playerTransformation.transformationIndex++;
+                playerTransformation.SwapController();
 
                 if (playerTransformation.transformationIndex == 1)
                 {
@@ -66,33 +67,18 @@ public class MonsterHealth : MonoBehaviour
                 //Replace this line with whatever plays the transformation cutscehene
             }
 
-
-            playerTransformation.SwapController();
-            playerTransformation.enemies.Remove(this);
-
-            //play first cutscene
-
-            StartCoroutine(killHim());
+           //StartCoroutine(killHim());
         }
     
         else if (anim == null)
         {
             Debug.LogError("Why the fuck are you not animating!");
         }
-    
-        //anim.Play("monsterdeath");
-    }
 
-    IEnumerator killHim()
-    {
-        yield return new WaitForSeconds(0.1f);
-        Debug.Log("pleasefuckingdie");
-        Destroy(gameObject);
     }
 
     public void DestroyEnemy()
     {
-        Debug.Log("Plz Die");
         Destroy(gameObject);
     }
 

@@ -21,8 +21,6 @@ public class PlayerTransformation : MonoBehaviour
         }
     }
 
-
-    [ContextMenu("SwapSprite")]
     public void SwapController()
     {
         currentAnim.runtimeAnimatorController = controllers[transformationIndex];

@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
     {
         moveInput = context.ReadValue<Vector2>();
 
-        IsMoving = moveInput != Vector2.zero;
+        IsMoving = moveInput.x != 0;
         if(moveInput.x > 0)
         {
             rend.flipX = true;

@@ -13,7 +13,7 @@ EditorBuildSettings:
     guid: 2bac3324a3e54504eb8fa69a1420ec0e
   - enabled: 1
     path: Assets/Scenes/level2.unity
-    guid: 1f7bda5d8d60f3b4986ea737f4fb62f6
+    guid: 2cedcca9f06091949852e848033a0e09
   - enabled: 1
     path: Assets/Scenes/level3.unity
     guid: 1cb83b72d2a98a94f978201d9647b153
@@ -39,6 +39,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Mutant4.Unity
     guid: a544d30f42e98f34fb1383cf1aea4c63
   - enabled: 1
-    path: Assets/Scenes/Controls.Unity
+    path: Assets/Scenes/CONTROLS.unity
     guid: c687838a6079e5c468ea85cc06866eb2
   m_configObjects: {}
