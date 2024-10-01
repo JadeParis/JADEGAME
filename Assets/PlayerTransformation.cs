@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class PlayerTransformation : MonoBehaviour
@@ -8,6 +9,11 @@ public class PlayerTransformation : MonoBehaviour
 
     public List<MonsterHealth> enemies;
     public RuntimeAnimatorController[] controllers;
+
+    public bool isAnimating;
+
+    public GameObject cutsceneCanvas;
+    public Animation cutsceneAnimation;
 
     Animator currentAnim;
 
@@ -21,6 +27,19 @@ public class PlayerTransformation : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (isAnimating)
+        {
+            if (!cutsceneAnimation.isPlaying)
+            {
+                SwapController();
+                cutsceneCanvas.SetActive(false);
+                isAnimating = false;
+            }
+        }
+    }
+
     public void SwapController()
     {
         currentAnim.runtimeAnimatorController = controllers[transformationIndex];
@@ -28,7 +47,9 @@ public class PlayerTransformation : MonoBehaviour
 
     public void PlayCutscene()
     {
-        //show image???????????????
+        cutsceneCanvas.SetActive(true);
+        cutsceneAnimation.Play();
+        isAnimating = true;
     }
 
 }

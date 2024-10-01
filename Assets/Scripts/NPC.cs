@@ -33,7 +33,7 @@ public class NPC : MonoBehaviour
         chosenDialogue = dialogue;
     }
 
-    // Update is called once per frame
+    // Update is called once per framee
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose)

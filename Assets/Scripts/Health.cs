@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -54,6 +55,12 @@ public class Health : MonoBehaviour
                 }
             }
         }
+
+        //if hyealkth 0
+        //cutscene, wait til finished (?) - use transformation script for referencwe 
+        //restartt / reload scene
+        //SceneManager.LoadScene("name of scene");
+
     }
 
     public void GainHealth()

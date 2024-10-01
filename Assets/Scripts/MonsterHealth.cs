@@ -58,16 +58,12 @@ public class MonsterHealth : MonoBehaviour
             if (playerTransformation != null)
             {
                 playerTransformation.transformationIndex++;
-                playerTransformation.SwapController();
 
                 if (playerTransformation.transformationIndex == 1)
                 {
                     playerTransformation.PlayCutscene();
                 }
-                //Replace this line with whatever plays the transformation cutscehene
             }
-
-           //StartCoroutine(killHim());
         }
     
         else if (anim == null)
