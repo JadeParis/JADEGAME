@@ -19,6 +19,7 @@ public class NPC : MonoBehaviour
     private int index;
 
     public float wordspeed;
+    private float resetWordspeed;
     public bool playerIsClose;
     bool isTyping;
 
@@ -31,6 +32,7 @@ public class NPC : MonoBehaviour
     {
         dialogueText = dialogueTextObject.GetComponent<TextMeshProUGUI>();
         chosenDialogue = dialogue;
+        resetWordspeed = wordspeed;
     }
 
     // Update is called once per framee
@@ -38,10 +40,15 @@ public class NPC : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
         {
-            if(dialoguePanel.activeInHierarchy)
+            if(dialoguePanel.activeInHierarchy && !isTyping)
             {
                 //zeroText();
+                wordspeed = resetWordspeed;
                 NextLine();
+            }
+            else if (dialoguePanel.activeInHierarchy && isTyping)
+            {
+                wordspeed = 0.001f;
             }
             else
             {

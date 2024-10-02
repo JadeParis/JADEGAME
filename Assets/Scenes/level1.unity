@@ -1540,9 +1540,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "TO DO:\n- i want character to stay on platform when it moves \n- e to
-    skip faster though diolouge \n\n- character death animation and switch scenes
-    \n- boss is being weird.\n\n- music and audio"
+  m_text: "TO DO:\n- character death animation and switch scenes \n- boss is being
+    weird.\n- when boss is killed, interact with hole to finish game\n- dont let
+    players past colliders \n- music and audio"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6250,7 +6250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382502309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 823.1929, y: -120.847404, z: -162.73135}
+  m_LocalPosition: {x: -464.70715, y: -120.847404, z: -162.73135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8576,7 +8576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1451.9, y: -4.7, z: -309.8}
+  m_LocalPosition: {x: 164, y: -4.7, z: -309.8}
   m_LocalScale: {x: 1, y: 1, z: 0.1811634}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -42698,7 +42698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5132984390200929176, guid: a188e3e325ba7e2459721d3a7e462b6d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1451.9
+      value: 164
       objectReference: {fileID: 0}
     - target: {fileID: 5132984390200929176, guid: a188e3e325ba7e2459721d3a7e462b6d, type: 3}
       propertyPath: m_LocalPosition.y
