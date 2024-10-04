@@ -67,7 +67,7 @@ public class PillBottle : MonoBehaviour
         if (bottleOpen)
         {
             timer += Time.deltaTime;
-            if (timer > 20f)
+            if (timer > 15f)
             {
                 // close bottle
                 bottleOpen = false;

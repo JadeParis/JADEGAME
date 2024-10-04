@@ -7,6 +7,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool isDead;
+    Animator anim;
+
     public float walkspeed = 5f;
     public float jumpForce = 1f;
     public float jumpCooldown = 0.1f;
@@ -123,4 +126,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
         }
     }
+
+  
+
 }

@@ -6,16 +6,26 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
+    public bool isDead;
+    Animator anim;
     public int health;
     public int numOfHearts;
+    private SpriteRenderer spriteRenderer;
 
     public Image[] emptyHearts; // Change from Image[] to GameObject[]
 
     public Image[] fullHearts;
     public Animator[] heartAnimators; // Array of animators corresponding to each heart
 
+    [SerializeField] GameObject DeathUI;
+    [SerializeField] float delayBeforeDeathUI = 2f; // Delay before showing death UI in seconds
+
+
     void Start()
     {
+        anim = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         // Initialize animators if not assigned
         if (heartAnimators.Length == 0)
         {
@@ -56,11 +66,21 @@ public class Health : MonoBehaviour
             }
         }
 
-        //if hyealkth 0
+        //if health 0
         //cutscene, wait til finished (?) - use transformation script for referencwe 
         //restartt / reload scene
         //SceneManager.LoadScene("name of scene");
+        // Ensure health does not go below 0 and check if the monster is dead
+       
+        health = Mathf.Clamp(health, 0, int.MaxValue);
 
+        if (health <= 0 && !isDead)
+        {
+            Die();
+
+            // shows death UI
+            DeathUI.gameObject.SetActive(true);
+        }
     }
 
     public void GainHealth()
@@ -78,4 +98,53 @@ public class Health : MonoBehaviour
             health -= v;
         }
     }
+   
+    public void Damage()
+    {
+        if (!isDead)
+        {
+            health--;
+            health = Mathf.Clamp(health, 0, int.MaxValue);
+            if (health <= 0)
+            {
+                Die();
+            }
+        }
+
+    }
+    public void Die()
+    {
+        if (anim != null && !isDead)
+        {
+            Debug.Log("Die() called. Starting death animation.");
+            isDead = true;
+            anim.SetBool("die", true);
+
+
+            // Start the coroutine to delay the death UI
+            StartCoroutine(ShowDeathUIAfterDelay());
+
+        }
+    }
+    // Coroutine to delay the showing of the Death UI
+    IEnumerator ShowDeathUIAfterDelay()
+    {
+        Debug.Log("Coroutine started. Waiting for " + delayBeforeDeathUI + " seconds.");
+        // Wait for the delay
+        yield return new WaitForSeconds(delayBeforeDeathUI);
+
+        // Check if DeathUI is assigned
+        if (DeathUI != null)
+        {
+            Debug.Log("Displaying Death UI.");
+            // Show the death UI after the delay
+            DeathUI.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("DeathUI GameObject is not assigned!");
+        }
+    }
 }
+
+
