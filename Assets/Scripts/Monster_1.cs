@@ -132,6 +132,7 @@ public class Monster_1 : MonoBehaviour
 
         if (canAttack)
         {
+            Debug.Log("can attack");
             rand = Random.value;
 
             if(rand >= 0.5f)
@@ -141,8 +142,9 @@ public class Monster_1 : MonoBehaviour
 
             canAttack = false;
         }
-        else if(!canAttack)
+        else
         {
+            Debug.Log("can't attack");
             timer += Time.deltaTime;
             if (timer >= cooldownTime)
             {
@@ -153,6 +155,7 @@ public class Monster_1 : MonoBehaviour
 
         if (distanceToPlayer > distanceToAttack)
         {
+            Debug.Log("chasing");
             currentState = EnemyState.Chasing;
         }
 

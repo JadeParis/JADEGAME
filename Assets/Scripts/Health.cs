@@ -77,9 +77,6 @@ public class Health : MonoBehaviour
         if (health <= 0 && !isDead)
         {
             Die();
-
-            // shows death UI
-            DeathUI.gameObject.SetActive(true);
         }
     }
 
@@ -117,12 +114,10 @@ public class Health : MonoBehaviour
         if (anim != null && !isDead)
         {
             Debug.Log("Die() called. Starting death animation.");
-            isDead = true;
             anim.SetBool("die", true);
-
-
             // Start the coroutine to delay the death UI
             StartCoroutine(ShowDeathUIAfterDelay());
+            isDead = true;
 
         }
     }

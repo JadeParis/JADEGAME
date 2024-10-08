@@ -27,7 +27,7 @@ public class ASyncLoader : MonoBehaviour
         while (!LoadOperation.isDone)
         {
             float progressiveValue = Mathf.Clamp01(LoadOperation.progress / 0.9f); 
-            LoadingSlider.value = progressiveValue;
+            //LoadingSlider.value = progressiveValue;
             yield return null;
         }
 

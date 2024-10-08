@@ -22,6 +22,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void Col1Off()
     {
+        Debug.Log("whaaa");
         AttackCol.SetActive(false);
         animator.ResetTrigger("Attack_2");
 
