@@ -157,6 +157,11 @@ public class Monster_1 : MonoBehaviour
             currentState = EnemyState.Chasing;
         }
 
+        if (distanceToPlayer == distanceToAttack)
+        {
+            Debug.Log("chasing");
+            currentState = EnemyState.Idle;
+        }
     }
 
     public void HitPlayer()
