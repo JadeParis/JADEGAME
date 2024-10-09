@@ -132,7 +132,6 @@ public class Monster_1 : MonoBehaviour
 
         if (canAttack)
         {
-            Debug.Log("can attack");
             rand = Random.value;
 
             if(rand >= 0.5f)
@@ -144,7 +143,6 @@ public class Monster_1 : MonoBehaviour
         }
         else
         {
-            Debug.Log("can't attack");
             timer += Time.deltaTime;
             if (timer >= cooldownTime)
             {
@@ -167,14 +165,14 @@ public class Monster_1 : MonoBehaviour
         //Enable the collider here
         if(isHit)
         {
-            DamagePlayer();
+            //DamagePlayer();
         }
     }
 
     public void ResetCollider()
     {
-        AttackCol.SetActive(false);
-        Attack2Col.SetActive(false);
+        //AttackCol.SetActive(false);
+        //Attack2Col.SetActive(false);
     }
 
     public void DamagePlayer()
@@ -187,6 +185,7 @@ public class Monster_1 : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            Debug.Log("ishit"); 
             isHit = true;
         }
     }

@@ -12,7 +12,7 @@ public class PillBridge : MonoBehaviour
 
     private void Start()
     {
-        platform.SetActive(false);
+      //  platform.SetActive(false);
     }
 
     private void OnTriggerStay2D(Collider2D collision)

@@ -140,6 +140,14 @@ public class Health : MonoBehaviour
             Debug.LogError("DeathUI GameObject is not assigned!");
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Ouch")
+        {
+            Damage();
+        }
+    }
 }
 
 
