@@ -32,6 +32,4 @@ public class ASyncLoader : MonoBehaviour
         }
 
     }
-
-
 }

@@ -1447,15 +1447,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "The attackers, usually characterized to have spikes on their body as they
-    use them as weapons and somewhat of storage, as they like to keep human body
-    parts on their spikes to save and eat later. The attackers only come out at night
-    as they believe that\u2019s when humans are most vulnerable,breaking into people\u2019s
-    homes and aggressively taking out everyone they see. They are very sensitive
-    to light, so flashing lights at them is a somewhat effective way to face them,
-    but hiding is the best way to run from them. \n\nHow to spot them : The way to
-    look out for the attackers is to smell, if you smell a disgusting stench of rotten
-    flesh, run and hide. They are close and they are fast."
+  m_text: "Attackers are typically recognized by the spikes on their bodies, which
+    they use as weapons and for storing human body parts to eat later. They only
+    come out at night, believing that\u2019s when humans are most vulnerable. They
+    break into homes and aggressively attack anyone they find. Sensitive to light,
+    flashing lights can be somewhat effective against them, but hiding is the best
+    way to escape.\n\nHow to Spot Them: If you smell a disgusting stench of rotten
+    flesh, it\u2019s time to run and hide. They are nearby and can move quickly."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3834aa2fabc62aa46ae55ac0ba0e09c5, type: 2}
   m_sharedMaterial: {fileID: 6806559416696702564, guid: 3834aa2fabc62aa46ae55ac0ba0e09c5, type: 2}

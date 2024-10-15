@@ -23,6 +23,9 @@ public class Health : MonoBehaviour
 
     void Start()
     {
+        GameManager.Instance.Init();
+        health = GameManager.Instance.health;
+
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -39,6 +42,8 @@ public class Health : MonoBehaviour
 
     void Update()
     {
+        GameManager.Instance.health = health;
+
         if (health > numOfHearts)
         {
             health = numOfHearts;
@@ -65,18 +70,43 @@ public class Health : MonoBehaviour
                 }
             }
         }
-
-        //if health 0
-        //cutscene, wait til finished (?) - use transformation script for referencwe 
-        //restartt / reload scene
-        //SceneManager.LoadScene("name of scene");
-        // Ensure health does not go below 0 and check if the monster is dead
        
         health = Mathf.Clamp(health, 0, int.MaxValue);
 
         if (health <= 0 && !isDead)
         {
             Die();
+        }
+    }
+
+    public void ResetHealth()
+    {
+        health = numOfHearts; // Reset health to maximum
+        UpdateHeartsUI(); // Update the heart UI
+    }
+
+    private void UpdateHeartsUI()
+    {
+        if (heartAnimators.Length > 0)
+        {
+            for (int i = 0; i < heartAnimators.Length; i++)
+            {
+                if (i < numOfHearts)
+                {
+                    if (i < health)
+                    {
+                        emptyHearts[i].enabled = false;
+                        heartAnimators[i].SetBool("IsFull", true);
+                        fullHearts[i].enabled = true;
+                    }
+                    else
+                    {
+                        heartAnimators[i].SetBool("IsFull", false);
+                        emptyHearts[i].enabled = true;
+                        fullHearts[i].enabled = false;
+                    }
+                }
+            }
         }
     }
 
@@ -109,18 +139,20 @@ public class Health : MonoBehaviour
         }
 
     }
+
     public void Die()
     {
         if (anim != null && !isDead)
         {
             Debug.Log("Die() called. Starting death animation.");
             anim.SetBool("die", true);
-            // Start the coroutine to delay the death UI
+            GameManager.Instance.died = true;
+
             StartCoroutine(ShowDeathUIAfterDelay());
             isDead = true;
-
         }
     }
+
     // Coroutine to delay the showing of the Death UI
     IEnumerator ShowDeathUIAfterDelay()
     {

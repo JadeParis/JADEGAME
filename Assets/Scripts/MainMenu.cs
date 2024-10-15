@@ -5,10 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-  public void PlayGame()
+    public void PlayGame()
     {
         SceneManager.LoadScene(1);
     }
+
+    public void LoadScene(int scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
+
     public void QuitGame()
     {
         Application.Quit();
@@ -47,6 +53,11 @@ public class MainMenu : MonoBehaviour
     public void Mutants4()
     {
         SceneManager.LoadScene(7);
+    }
+
+    public void specialthanks()
+    {
+        SceneManager.LoadScene(9);
     }
 }
 

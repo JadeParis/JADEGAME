@@ -459,7 +459,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1175, y: 610}
+  m_AnchoredPosition: {x: -1175, y: 644}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &321990127
@@ -484,18 +484,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: "The watchers. These mutants are the least aggressive, but the most violent
     with their kills. These mutants will find a victim and will wait for the perfect
-    time to attack this varies, from weeks, months and even years. These mutants
-    also like to wait in a spot where their chosen victim would usually walk by and
-    wait. They are great hiders and you don\u2019t see them often. These mutants
-    don\u2019t like to be alone, so they drag around their past victim until they
-    begin to decompose and rot. When the body is completely limbless that\u2019s
-    when the mutant begins its next hunt for a new \u2018friend\u2019. If you see
-    a watcher mutant, be cautious, as you might not be the victim they have chosen,
-    if you\u2019re not they will ignore you if you are they will attack. So always
-    keep a safe distance from them where you can run, hide and defend yourself quickly.\n\nHow
-    to spot them : To look out for the watchers, you can tell one is nearby when
-    you discover corpses, body parts or rotting mounds of flesh or trails of blood.
-    \r\n"
+    time to attack this varies, from weeks, months and even years. Watchers prefer
+    to hide in places where their chosen victim usually walks by. They are skilled
+    at concealing themselves and are rarely seen. Disliking solitude, they drag around
+    their past victims until the bodies begin to decompose. Once a body is completely
+    limbless, the mutant starts its next hunt for a new \"friend.\" If you encounter
+    a Watcher mutant, be cautious. You might not be the target they have chosen\u2014if
+    you aren\u2019t, they will ignore you; if you are, they will attack. Always maintain
+    a safe distance, allowing you to run, hide, or defend yourself quickly.\n\nHow
+    to Spot Them: You can tell a Watcher is nearby if you discover corpses, body
+    parts, rotting mounds of flesh, or trails of blood."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3834aa2fabc62aa46ae55ac0ba0e09c5, type: 2}
   m_sharedMaterial: {fileID: 6806559416696702564, guid: 3834aa2fabc62aa46ae55ac0ba0e09c5, type: 2}

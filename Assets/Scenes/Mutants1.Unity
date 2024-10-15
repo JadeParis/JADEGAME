@@ -1059,16 +1059,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "The listeners are usually characterized by their extremely long arms.
-    There are usually mutants who had bad eye signs or who were blind while they
-    were human, they are very patient mutants as they like to listen in on humans
-    waiting for the perfect time to attack. They have extremely good hearing, as
-    they have bad eyesight, and they use their long extended arms to help navigate
-    themselves; they use it as a form of echo location. They aren\u2019t the most
-    successful with their attacks, so they usually aim towards children and animals,
-    as they are louder and an easier target.\r\n\nHow to spot them : To look out
-    for the listeners you can usually hear them thumping their arms around as they
-    navigate themselves trying to find prey. "
+  m_text: 'Listeners are characterized by their extremely long arms. Many of them
+    were mutants who had poor eyesight or were blind when they were human. They are
+    patient and enjoy listening in on humans, waiting for the perfect moment to attack.
+    With their excellent hearing compensating for their bad eyesight, they use their
+    long arms to help navigate, functioning like echolocation. They are not very
+    successful in their attacks, so they typically target children and animals, as
+    they are louder and easier to catch.
+
+
+    How to Spot Them: You can hear Listeners
+    thumping their arms as they move around, searching for prey.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3834aa2fabc62aa46ae55ac0ba0e09c5, type: 2}
   m_sharedMaterial: {fileID: 6806559416696702564, guid: 3834aa2fabc62aa46ae55ac0ba0e09c5, type: 2}

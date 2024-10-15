@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         rend = GetComponent<SpriteRenderer>();
         touchingDirections = GetComponent<TouchingDirections>();
+
+        
     }
 
     private void FixedUpdate()

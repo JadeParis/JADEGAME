@@ -1322,10 +1322,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Misery mutants are all different and unique but they all fall under 4 main
-    categories,  Thumpers, The Piercers and the watchers, all aggressive in their
-    own ways. They all look similar with their tall frame and dark shadow-like skin
-    made out of what it looks and feels like soot.
+  m_text: 'Misery mutants are unique but fit into four main groups: Thumpers, Piercers,
+    and Watchers. Each group is aggressive in its own way. They all have a similar
+    appearance, with tall frames and dark, soot-like skin.
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3834aa2fabc62aa46ae55ac0ba0e09c5, type: 2}
   m_sharedMaterial: {fileID: 6806559416696702564, guid: 3834aa2fabc62aa46ae55ac0ba0e09c5, type: 2}

@@ -7042,7 +7042,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382502309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -414.70715, y: -120.847404, z: -162.73135}
+  m_LocalPosition: {x: 1740.2928, y: -120.847404, z: -162.73135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9285,7 +9285,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 214, y: -4.7, z: -309.8}
+  m_LocalPosition: {x: 2369, y: -4.7, z: -309.8}
   m_LocalScale: {x: 1, y: 1, z: 0.1811634}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10262,14 +10262,14 @@ MonoBehaviour:
   dialogueTextObject: {fileID: 1640595396}
   chosenDialogue: []
   dialogue:
-  - ey, kid, what are you doing out here alone?
+  - Hey, kid, what are you doing out here alone?
   - ...
   - Not much of a talker, huh?
   - "You don\u2019t look so great. Here, take some chips."
   - "Hopefully, that\u2019ll help you feel better."
   - "By the way, there\u2019s a big hole not far from here."
   - Best to steer clear of it, okay?
-  - "ut if you\u2019ve got those pills, you should be fine."
+  - "But if you\u2019ve got those pills, you should be fine."
   - Just be careful, alright?
   alternateDialogue:
   - Be careful kid...
@@ -12366,6 +12366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   health: 3
+  finalBoss: 0
   playerTransformation: {fileID: 0}
 --- !u!114 &681831238
 MonoBehaviour:
@@ -12386,10 +12387,10 @@ MonoBehaviour:
   cooldownTime: 2
   player: {fileID: 5132984388773419828}
   speed: 15
-  flip: 0
   AttackCol: {fileID: 1093628079}
   Attack2Col: {fileID: 901180266}
   isHit: 0
+  yOffset: 0
 --- !u!114 &681831239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24301,7 +24302,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1041569670}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: BackTitle
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32283,11 +32284,11 @@ MonoBehaviour:
   - 'Radio: Good evening, listeners. This is Sunny Side Radio 102.5.'
   - "Radio:  I\u2019m coming to you with an urgent plea for help. "
   - 'Radio: We have an emergency situation, and we need your assistance.'
-  - 'Radio: If you have any information regarding the whereabouts of Sarah Thompson. '
+  - 'Radio: If you have any information about the whereabouts of Sarah Smith. '
   - 'Radio: a 28-year-old woman last seen near Maple Park.'
   - 'Radio: Please call us immediately!'
-  - 'Radio: Stay tuned for updates, and thank you for listening. This is Sunny Side
-    Radio 102.5. '
+  - 'Radio: Stay tuned for updates, and thank you for listening.  '
+  - 'Radio: This is Sunny Side Radio 102.5.'
   - 'Radio: *Static*'
   alternateDialogue:
   - 'This life doesnt feel real... '
@@ -39415,6 +39416,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2818731561012041294, guid: 1cf87a91738e3964ca7e112b18231d42, type: 3}
+      propertyPath: health
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2818731561012041295, guid: 1cf87a91738e3964ca7e112b18231d42, type: 3}
       propertyPath: pauseMenu
       value: 
@@ -39526,7 +39531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5132984390200929176, guid: a188e3e325ba7e2459721d3a7e462b6d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 214
+      value: 2369
       objectReference: {fileID: 0}
     - target: {fileID: 5132984390200929176, guid: a188e3e325ba7e2459721d3a7e462b6d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -39655,7 +39660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
-  health: 5
+  health: 2
   numOfHearts: 5
   emptyHearts:
   - {fileID: 1135944893}

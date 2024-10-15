@@ -21,12 +21,14 @@ public class Monster_1 : MonoBehaviour
 
     public Health player;
     public float speed = 5;
-    public bool flip;
+
     public GameObject AttackCol;
     public GameObject Attack2Col;
     public bool isHit;
     Animator anim;
     private Vector2 originalPosition; // Variable to store the original position
+
+    public float yOffset;
 
 
     //////////////////////////////////////////////////////////////////////////////////////// 
@@ -77,15 +79,19 @@ public class Monster_1 : MonoBehaviour
     {
         anim.SetBool("Walking", false);
 
+        if (player.transform.position.y + yOffset > transform.position.y)
+            return;
+
         if (Vector2.Distance(transform.position, originalPosition) < 0.1f)
         {
+            //Ignore Y value
             Vector2 direction = (originalPosition - (Vector2)transform.position).normalized;
             transform.Translate(direction * speed * Time.deltaTime);
         }
         else
         {
             // Snap to the original position to avoid small floating point inaccuracies
-            transform.position = originalPosition;
+            // transform.position = originalPosition;
         }
 
         if (distanceToPlayer <= distanceToChase)
@@ -100,13 +106,27 @@ public class Monster_1 : MonoBehaviour
 
         if (player.transform.position.x > transform.position.x)
         {
-            scale.x = Mathf.Abs(scale.x) * -1 * (flip ? -1 : 1);
-            transform.Translate(x:speed * Time.deltaTime, y:0, z:0);
+            if (player.transform.position.y + yOffset > transform.position.y)
+            {
+                currentState = EnemyState.Idle;
+            }
+            else
+            {
+                scale.x = Mathf.Abs(scale.x) * -1;
+            }
+
+            transform.Translate(speed * Time.deltaTime, 0, 0);
         }
         else
         {
-            scale.x = Mathf.Abs(scale.x) * (flip ? -1 : 1); 
-            transform.Translate(x:speed * Time.deltaTime * -1, y:0, z:0);
+            if (player.transform.position.y + yOffset > transform.position.y)
+            {
+                currentState = EnemyState.Idle;
+            }
+            else
+                scale.x = Mathf.Abs(scale.x); 
+
+            transform.Translate(speed * Time.deltaTime * -1, 0, 0);
         }
 
         transform.localScale = scale;

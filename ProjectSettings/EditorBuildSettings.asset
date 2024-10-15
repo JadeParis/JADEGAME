@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CONTROLS.unity
     guid: c687838a6079e5c468ea85cc06866eb2
+  - enabled: 1
+    path: Assets/Scenes/special thanks.unity
+    guid: f7f340b89e34c8f4e93c6a03ebf701cc
   m_configObjects: {}

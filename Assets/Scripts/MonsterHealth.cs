@@ -7,6 +7,8 @@ public class MonsterHealth : MonoBehaviour
     public bool isDead;
     Animator anim;
     public int health;
+    public bool finalBoss;
+    private GameObject gameEndUI;
 
     [HideInInspector] public PlayerTransformation playerTransformation;
 
@@ -18,6 +20,11 @@ public class MonsterHealth : MonoBehaviour
         anim = GetComponent<Animator>();
         monsterCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        if (finalBoss)
+        {
+            gameEndUI = GameObject.Find("When Monster is dead");
+            gameEndUI.SetActive(false);
+        }
     }
 
 
@@ -48,6 +55,12 @@ public class MonsterHealth : MonoBehaviour
 
     public void Die()
     {
+
+        Debug.Log(finalBoss);
+        if (finalBoss)
+        {
+            gameEndUI.SetActive(true);
+        }
         if (anim != null && !isDead)
         {
             isDead = true;
