@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,8 +29,22 @@ public class NPC : MonoBehaviour
 
     public bool canGiveChips;
 
+
+    public AudioSource interact;
+    public AudioSource girltalk;
+
+    public bool girlTalking;
+    public bool interacting;
+    public bool interacted;
+    public bool talking;
+    public bool finishedInteracting;
+
+    //public List<AudioSource> HMMS;
+    public List<AudioSource> HMMS = new List<AudioSource>();
+
     private void Start()
     {
+        finishedInteracting = false;
         dialogueText = dialogueTextObject.GetComponent<TextMeshProUGUI>();
         chosenDialogue = dialogue;
         resetWordspeed = wordspeed;
@@ -38,9 +53,14 @@ public class NPC : MonoBehaviour
     // Update is called once per framee
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
         {
-            if(dialoguePanel.activeInHierarchy && !isTyping)
+            talking = true;
+
+           
+
+            if (dialoguePanel.activeInHierarchy && !isTyping)
             {
                 //zeroText();
                 wordspeed = resetWordspeed;
@@ -48,33 +68,105 @@ public class NPC : MonoBehaviour
             }
             else if (dialoguePanel.activeInHierarchy && isTyping)
             {
+                talking = false;
                 wordspeed = 0.001f;
             }
             else
             {
                 dialoguePanel.SetActive(true);
                 StartCoroutine(Typing());
+            }
 
+            if (interacting)
+            {
+                if (!interacted)
+                {
+                  
+                    interact.Play();
+                    interacted = true;
+
+
+                }    
+                
+            
+            }
+
+            if (interacted)
+            {
+              
+                if (finishedInteracting)
+                {
+                    interacted = false;
+                    finishedInteracting = false;
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+
+            if (girltalk)
+            {
+                if (talking)
+                {
+                    ActivateRandomHmms(Audio, Audio1, Audio2);
+
+                }
+
+                if (!talking)
+                {
+                    return;
+                }
+               
             }
         }
-    }
 
+    }
+    public AudioSource Audio;
+    public AudioSource Audio1;
+    public AudioSource Audio2;
+
+    public void ActivateRandomHmms(AudioSource Audio, AudioSource Audio1, AudioSource Audio2)
+    {
+        if (HMMS.Count == 0) return;
+
+        int randomIndex = Random.Range(0, HMMS.Count);
+
+        HMMS[randomIndex].Play();
+
+        HMMS.RemoveAt(randomIndex);
+        
+       
+        if(HMMS.Count == 0)
+        {
+            HMMS.Add(Audio);
+            HMMS.Add(Audio1);
+            HMMS.Add(Audio2);
+        }
+
+    }
 
     public void zeroText()
     {
+        finishedInteracting = true;
         StopAllCoroutines();
         dialogueText.text = ""; 
         isTyping = false;
         currentDialogue = string.Empty;
         index = 0;
         dialoguePanel.SetActive(false);
-
+        interacted = false;
+        talking = false;
         chosenDialogue = alternateDialogue;
+
+        
 
     }
 
     IEnumerator Typing()
     {
+        
         isTyping = true;
         while (isTyping)
         {
@@ -88,10 +180,13 @@ public class NPC : MonoBehaviour
         }
         currentDialogue = string.Empty;
     }
+  
 
     public void NextLine()
     {
-        if(index < chosenDialogue.Length -1)
+        talking = true;
+        
+        if (index < chosenDialogue.Length -1)
         {
             StopAllCoroutines();
             currentDialogue = string.Empty;
@@ -103,6 +198,7 @@ public class NPC : MonoBehaviour
         else
         {
             zeroText();
+           
 
             if (!hasGivenChips && canGiveChips)
             {
@@ -118,8 +214,10 @@ public class NPC : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+           
             health = other.GetComponent<Health>();
-            playerIsClose = true; 
+            playerIsClose = true;
+            
         }
     }
 
@@ -128,6 +226,7 @@ public class NPC : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsClose = false;
+            
             zeroText();
         }
     }

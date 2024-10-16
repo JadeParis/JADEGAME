@@ -56,11 +56,11 @@ public class MonsterHealth : MonoBehaviour
     public void Die()
     {
 
-        Debug.Log(finalBoss);
         if (finalBoss)
         {
             gameEndUI.SetActive(true);
         }
+
         if (anim != null && !isDead)
         {
             isDead = true;

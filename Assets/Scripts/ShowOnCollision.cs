@@ -7,7 +7,9 @@ public class ShowOnCollision : MonoBehaviour
     public GameObject objectToShow;
     public bool pickupable; // The GameObject that will be shown upon collision
     bool canPickup;
-
+    public bool interacting;
+    public bool interacted;
+    public AudioSource interact;
     Health health;
 
     void Start()
@@ -26,6 +28,11 @@ public class ShowOnCollision : MonoBehaviour
         {
             health.GainHealth();
             Destroy(gameObject);
+            interacted = true;
+        }
+       if (interacted)
+        {
+            interact.Play();
         }
     }
 

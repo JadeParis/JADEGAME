@@ -7,6 +7,7 @@ public class walksound : MonoBehaviour
     [SerializeField]
     private AudioClip WalkingSound;
 
+
     [SerializeField]
     private AudioClip WalkingSoundArray;
 

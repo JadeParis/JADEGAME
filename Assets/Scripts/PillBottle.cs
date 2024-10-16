@@ -18,6 +18,10 @@ public class PillBottle : MonoBehaviour
 
     public Image okyspooky;
 
+    public AudioSource interact;
+    public AudioSource closeinteract;
+
+
     private void Start()
     {
         spriteRenderer = GetComponent<Image>();
@@ -42,17 +46,21 @@ public class PillBottle : MonoBehaviour
                 canOpen = false;
                 timer = 0;
                 SeeSpooky();
+                closeinteract.Play();
+
             }
             // player opens bottle
             if (bottleOpen && canOpen)
             {
                 SeeSpooky();
+                interact.Play();
             }
             // player opened bottle but they shouldn't yet
             if (bottleOpen && !canOpen)
             {
                 bottleOpen = false;
             }
+          
         }
     }
 
@@ -69,6 +77,7 @@ public class PillBottle : MonoBehaviour
                 bottleOpen = false;
                 SeeSpooky();
                 timer = 0;
+                closeinteract.Play();
             }
         }
         // start timer when bottle is just closed
