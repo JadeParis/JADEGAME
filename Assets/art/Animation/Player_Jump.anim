@@ -21,9 +21,11 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: edbe52c1aef814645858a9d124aeb6b4, type: 3}
-    - time: 0.33333334
+    - time: 0.76666665
       value: {fileID: 21300000, guid: e4953bd9975ff4a40835cd5d92c5234b, type: 3}
-    - time: 0.6666667
+    - time: 1.5
+      value: {fileID: 21300000, guid: c4909c4b430b2a24a9c25ffe4dbacba8, type: 3}
+    - time: 2.1666667
       value: {fileID: 21300000, guid: c4909c4b430b2a24a9c25ffe4dbacba8, type: 3}
     attribute: m_Sprite
     path: 
@@ -47,12 +49,13 @@ AnimationClip:
     - {fileID: 21300000, guid: edbe52c1aef814645858a9d124aeb6b4, type: 3}
     - {fileID: 21300000, guid: e4953bd9975ff4a40835cd5d92c5234b, type: 3}
     - {fileID: 21300000, guid: c4909c4b430b2a24a9c25ffe4dbacba8, type: 3}
+    - {fileID: 21300000, guid: c4909c4b430b2a24a9c25ffe4dbacba8, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.68333334
+    m_StopTime: 2.1833334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -73,7 +76,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.083333336
-    functionName: get_playerIndex
+    functionName: MonsterjumpFunction
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -26,14 +26,17 @@ public class ShowOnCollision : MonoBehaviour
         // Check if the "F" key is pressed
         if (Input.GetKeyDown(KeyCode.F) && canPickup && pickupable)
         {
-            health.GainHealth();
-            Destroy(gameObject);
             interacted = true;
-        }
-       if (interacted)
-        {
+            health.GainHealth();
             interact.Play();
+            StartCoroutine(waitTime());
         }
+    }
+
+    public IEnumerator waitTime()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

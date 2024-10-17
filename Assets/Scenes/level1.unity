@@ -1730,10 +1730,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'TO DO:
-
-
-    - music and audio'
+  m_text: "TO DO:\n\n- fade wont fade \n- would it be possible for audio to play
+    continuelsley across multiple scenes. \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1796,7 +1794,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -1121.7178, y: 0, z: 395.94873, w: -16.817444}
+  m_margin: {x: -1121.7178, y: 0, z: 479.18262, w: -202.20233}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2037,7 +2035,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3682e21a6c371d944b69874706b460ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVolumes: []
+  maxValue: 0
+  audioFade: {fileID: 0}
+  volume: 1
 --- !u!61 &85263498
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2477,7 +2477,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &107338756
 Transform:
   m_ObjectHideFlags: 0
@@ -3796,7 +3796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &187877271
 Transform:
   m_ObjectHideFlags: 0
@@ -4086,8 +4086,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 283
-  m_fontSizeBase: 283
+  m_fontSize: 247.01
+  m_fontSizeBase: 247.01
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8061,7 +8061,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382502309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -438.60715, y: -120.847404, z: -162.73135}
+  m_LocalPosition: {x: 1595.2928, y: -120.847404, z: -162.73135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8620,6 +8620,7 @@ GameObject:
   - component: {fileID: 402677022}
   - component: {fileID: 402677021}
   - component: {fileID: 402677023}
+  - component: {fileID: 402677024}
   m_Layer: 0
   m_Name: boxcollider
   m_TagString: Untagged
@@ -8732,7 +8733,105 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3682e21a6c371d944b69874706b460ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVolumes: []
+  maxValue: 0
+  audioFade: {fileID: 0}
+  volume: 1
+--- !u!82 &402677024
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402677017}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 52b51775c9147864ebbcc49abb7a6334, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &417604091
 GameObject:
   m_ObjectHideFlags: 0
@@ -8749,7 +8848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &417604092
 Transform:
   m_ObjectHideFlags: 0
@@ -10625,7 +10724,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 190.1, y: -4.7, z: -309.8}
+  m_LocalPosition: {x: 2224, y: -4.7, z: -309.8}
   m_LocalScale: {x: 1, y: 1, z: 0.1811634}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10720,12 +10819,11 @@ MonoBehaviour:
   dialogueTextObject: {fileID: 199855776}
   chosenDialogue: []
   dialogue:
-  - 'Radio: We interrupt our regular programming to bring you an urgent message.'
+  - 'Radio: We interrupt our programming to bring you an urgent message.'
   - 'Radio: If you or anyone you know is experiencing unusual symptoms such as...'
   - 'Radio: loss of sleep, cannibalistic thoughts...'
   - 'Radio: A desire to consume rotting animals, or a general lack of faith. '
-  - 'Radio: Please seek immediate assistance from local health authorities or emergency
-    services.'
+  - 'Radio: Please seek assistance from local health authorities or emergency services.'
   - 'Radio: Do not attempt to manage these symptoms on your own...'
   - 'Radio: Remain indoors and avoid contact with others until you receive guidance.'
   - 'Radio: *Static*'
@@ -13415,7 +13513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToShow: {fileID: 849701267}
   pickupable: 1
-  interacting: 0
+  interacting: 1
   interacted: 0
   interact: {fileID: 642417186}
 --- !u!70 &642417185
@@ -13446,7 +13544,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5c1c920c3cd8a2c40856a169082599f6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.416
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -13917,7 +14015,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3682e21a6c371d944b69874706b460ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVolumes: []
+  maxValue: 0
+  audioFade: {fileID: 0}
+  volume: 1
 --- !u!61 &663874251
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14388,14 +14488,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2292eabac4610447be82d99c299e6c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SFXPrefab: {fileID: 6688689083282499950, guid: 9d77cc7e94d57224eb09be72f23497ef, type: 3}
   Monsterwalk: {fileID: 8300000, guid: 8a224f999a6df184d9d657d915d89165, type: 3}
   MonsterAttack1: {fileID: 8300000, guid: c30485c8ea5382c429e5b3475ecafe3d, type: 3}
   MonsterAttack2: {fileID: 8300000, guid: ee48a928e7d3f574ab546547d1092dc5, type: 3}
-  Monsterdied: {fileID: 0}
+  Monsterdied: {fileID: 8300000, guid: 7aad553e2f22be1479b5606261b1ea92, type: 3}
+  Monsterjump: {fileID: 0}
   MonsterwalkArray: {fileID: 8300000, guid: 8a224f999a6df184d9d657d915d89165, type: 3}
   MonsterAttack1Array: {fileID: 8300000, guid: c30485c8ea5382c429e5b3475ecafe3d, type: 3}
   MonsterAttack2Array: {fileID: 8300000, guid: ee48a928e7d3f574ab546547d1092dc5, type: 3}
-  MonsterdiedArray: {fileID: 0}
+  MonsterdiedArray: {fileID: 8300000, guid: 7aad553e2f22be1479b5606261b1ea92, type: 3}
+  MonsterjumpArray: {fileID: 0}
 --- !u!82 &681831240
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19837,7 +19940,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3682e21a6c371d944b69874706b460ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVolumes: []
+  maxValue: 0
+  audioFade: {fileID: 0}
+  volume: 1
 --- !u!1 &901180266
 GameObject:
   m_ObjectHideFlags: 0
@@ -25735,7 +25840,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1145797105
 Transform:
   m_ObjectHideFlags: 0
@@ -26888,7 +26993,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3682e21a6c371d944b69874706b460ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVolumes: []
+  maxValue: 0
+  audioFade: {fileID: 0}
+  volume: 1
 --- !u!61 &1187473701
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27431,6 +27538,7 @@ GameObject:
   - component: {fileID: 1224362351}
   - component: {fileID: 1224362350}
   - component: {fileID: 1224362349}
+  - component: {fileID: 1224362353}
   m_Layer: 0
   m_Name: boxxx (1)
   m_TagString: Untagged
@@ -27446,8 +27554,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224362347}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.30887, y: 0, z: 0}
+  m_LocalScale: {x: 4.524383, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1414809312}
@@ -27491,7 +27599,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3682e21a6c371d944b69874706b460ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVolumes: []
+  maxValue: 0
+  audioFade: {fileID: 1224362353}
+  volume: 1
 --- !u!82 &1224362351
 AudioSource:
   m_ObjectHideFlags: 0
@@ -27504,7 +27614,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 040cbf397e8dc59489fe4344eedfac8d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.165
+  m_Volume: 0.31
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -27640,6 +27750,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1224362353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224362347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 829733b955fa3814aaad82696ad4ddf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1224362351}
+  fadeDuration: 3
 --- !u!1 &1225159220
 GameObject:
   m_ObjectHideFlags: 0
@@ -29186,7 +29310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1263477085
 Transform:
   m_ObjectHideFlags: 0
@@ -30119,7 +30243,8 @@ MonoBehaviour:
   - "I\u2019m too exhausted to deal with these mutants right now..."
   - '*Press ''Left Ctrl'' to show and hide platforms.*'
   alternateDialogue:
-  - "I feel off... I just don\u2019t want to fight them."
+  - I feel off...
+  - 'I dont want to fight these mutants. '
   - '*Press ''Left Ctrl'' to show and hide platforms.*'
   currentDialogue: 
   wordspeed: 0.05
@@ -30721,7 +30846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1357857776
 Transform:
   m_ObjectHideFlags: 0
@@ -32896,15 +33021,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1457279445}
   - component: {fileID: 1457279447}
-  - component: {fileID: 1457279449}
-  - component: {fileID: 1457279450}
   m_Layer: 0
   m_Name: Carbeep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1457279445
 Transform:
   m_ObjectHideFlags: 0
@@ -32973,115 +33096,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1457279449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1457279444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3682e21a6c371d944b69874706b460ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxVolumes: []
---- !u!82 &1457279450
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1457279444}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 118f968952528e8448fab34fa2bc1240, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.577
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 85
-  DopplerLevel: 1
-  MinDistance: 9.546082
-  MaxDistance: 11.812317
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1464026966
 GameObject:
   m_ObjectHideFlags: 0
@@ -35175,7 +35189,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1547255855
 Transform:
   m_ObjectHideFlags: 0
@@ -36059,6 +36073,7 @@ GameObject:
   - component: {fileID: 1619129396}
   - component: {fileID: 1619129395}
   - component: {fileID: 1619129394}
+  - component: {fileID: 1619129398}
   m_Layer: 0
   m_Name: boxxx
   m_TagString: Untagged
@@ -36093,7 +36108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3682e21a6c371d944b69874706b460ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVolumes: []
+  maxValue: 0
+  audioFade: {fileID: 0}
+  volume: 1
 --- !u!82 &1619129395
 AudioSource:
   m_ObjectHideFlags: 0
@@ -36268,6 +36285,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1619129398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619129392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 829733b955fa3814aaad82696ad4ddf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1619129395}
+  fadeDuration: 3
 --- !u!1 &1635696394
 GameObject:
   m_ObjectHideFlags: 0
@@ -36776,7 +36807,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1659037046
 Transform:
   m_ObjectHideFlags: 0
@@ -37797,7 +37828,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3682e21a6c371d944b69874706b460ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVolumes: []
+  maxValue: 0
+  audioFade: {fileID: 0}
+  volume: 1
 --- !u!61 &1695329658
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41648,7 +41681,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5c1c920c3cd8a2c40856a169082599f6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.416
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -43623,7 +43656,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3682e21a6c371d944b69874706b460ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVolumes: []
+  maxValue: 0
+  audioFade: {fileID: 0}
+  volume: 1
 --- !u!61 &2019790453
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44017,7 +44052,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3682e21a6c371d944b69874706b460ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVolumes: []
+  maxValue: 0
+  audioFade: {fileID: 0}
+  volume: 1
 --- !u!82 &2041798733
 AudioSource:
   m_ObjectHideFlags: 0
@@ -45363,7 +45400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5132984390200929176, guid: a188e3e325ba7e2459721d3a7e462b6d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 190.1
+      value: 2224
       objectReference: {fileID: 0}
     - target: {fileID: 5132984390200929176, guid: a188e3e325ba7e2459721d3a7e462b6d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -45556,14 +45593,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2292eabac4610447be82d99c299e6c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SFXPrefab: {fileID: 6688689083282499950, guid: 9d77cc7e94d57224eb09be72f23497ef, type: 3}
   Monsterwalk: {fileID: 0}
-  MonsterAttack1: {fileID: 0}
-  MonsterAttack2: {fileID: 0}
-  Monsterdied: {fileID: 0}
+  MonsterAttack1: {fileID: 8300000, guid: 6bd6c02a126ea7c4393fed3fee4ed06c, type: 3}
+  MonsterAttack2: {fileID: 8300000, guid: 7f18038be9fcbc04aae0c82b1f140981, type: 3}
+  Monsterdied: {fileID: 8300000, guid: 7a163ce5b76c23744b080f058edfbd5e, type: 3}
+  Monsterjump: {fileID: 8300000, guid: b29e45ff8e6cca84e89997904ec43524, type: 3}
   MonsterwalkArray: {fileID: 0}
-  MonsterAttack1Array: {fileID: 0}
-  MonsterAttack2Array: {fileID: 0}
-  MonsterdiedArray: {fileID: 0}
+  MonsterAttack1Array: {fileID: 8300000, guid: 6bd6c02a126ea7c4393fed3fee4ed06c, type: 3}
+  MonsterAttack2Array: {fileID: 8300000, guid: 7f18038be9fcbc04aae0c82b1f140981, type: 3}
+  MonsterdiedArray: {fileID: 8300000, guid: 7a163ce5b76c23744b080f058edfbd5e, type: 3}
+  MonsterjumpArray: {fileID: 8300000, guid: b29e45ff8e6cca84e89997904ec43524, type: 3}
 --- !u!1001 &7419038915971490319
 PrefabInstance:
   m_ObjectHideFlags: 0
