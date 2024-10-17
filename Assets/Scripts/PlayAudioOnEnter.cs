@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayAudioOnEnter : MonoBehaviour
 {
     private AudioSource audioSource;
+    public float[] maxVolumes;
 
     private void Start()
     {
