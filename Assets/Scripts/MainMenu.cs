@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame()
-    {
-        SceneManager.LoadScene(1);
-    }
 
     public void LoadScene(int scene)
     {
         SceneManager.LoadScene(scene);
     }
+
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
 
     public void QuitGame()
     {
@@ -59,5 +63,7 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(9);
     }
+
+  
 }
 

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - AttackCol
   - Ouch
+  - GameMusic
   layers:
   - Default
   - TransparentFX
