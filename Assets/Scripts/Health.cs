@@ -20,6 +20,7 @@ public class Health : MonoBehaviour
     [SerializeField] GameObject DeathUI;
     [SerializeField] float delayBeforeDeathUI = 2f; // Delay before showing death UI in seconds
 
+    PlayerController pc;
 
     void Start()
     {
@@ -28,7 +29,7 @@ public class Health : MonoBehaviour
 
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
+        pc = GetComponent<PlayerController>();
         // Initialize animators if not assigned
         if (heartAnimators.Length == 0)
         {
@@ -76,6 +77,7 @@ public class Health : MonoBehaviour
         if (health <= 0 && !isDead)
         {
             Die();
+            
         }
     }
 
@@ -142,6 +144,7 @@ public class Health : MonoBehaviour
 
     public void Die()
     {
+        pc.Die();
         if (anim != null && !isDead)
         {
             Debug.Log("Die() called. Starting death animation.");

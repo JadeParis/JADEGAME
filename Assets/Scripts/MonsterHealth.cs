@@ -14,6 +14,12 @@ public class MonsterHealth : MonoBehaviour
 
     private Collider2D monsterCollider;
     private SpriteRenderer spriteRenderer;
+    private SpriteRenderer myRenderer;
+    private Shader shaderGUItext;
+    private Shader shaderSpritesDefault;
+
+    public GameObject hitPrefab;
+    public Transform partPos;
 
     private void Start()
     {
@@ -25,6 +31,7 @@ public class MonsterHealth : MonoBehaviour
             gameEndUI = GameObject.Find("When Monster is dead");
             gameEndUI.SetActive(false);
         }
+      
     }
 
 
@@ -49,6 +56,8 @@ public class MonsterHealth : MonoBehaviour
             {
                 Die();
             }
+
+            Instantiate(hitPrefab, partPos.transform.position, partPos.transform.rotation);
         }
 
     }
@@ -98,5 +107,6 @@ public class MonsterHealth : MonoBehaviour
             Damage();
         }
     }
-   
+  
 }
+   

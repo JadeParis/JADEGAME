@@ -697,9 +697,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Thank you so much to my awesome teachers, Masaya, Brooke, and Michaela,
-    for all your help! \n\nAnd a huge thanks to my classmates, Rachel, Drew, April
-    and Dasha \u2014 you guys made this game so much better. I couldn\u2019t have
-    done it without you!"
+    for all your help! \n\nAnd a huge thanks to my classmates, Rachel, Drew, April,
+    Dasha, Luke and James \u2014 you guys made this game so much better. I couldn\u2019t
+    have done it without you!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3834aa2fabc62aa46ae55ac0ba0e09c5, type: 2}
   m_sharedMaterial: {fileID: 6806559416696702564, guid: 3834aa2fabc62aa46ae55ac0ba0e09c5, type: 2}

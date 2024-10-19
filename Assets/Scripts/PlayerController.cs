@@ -63,9 +63,12 @@ public class PlayerController : MonoBehaviour
 
         
     }
+    
 
     private void FixedUpdate()
     {
+        if (isDead) return; // Stop all movement if dead
+
         rb.velocity = new Vector2(moveInput.x * walkspeed, rb.velocity.y);
 
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
@@ -73,6 +76,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        if (isDead) return; // Prevent movement if dead
         moveInput = context.ReadValue<Vector2>();
 
         IsMoving = moveInput.x != 0;
@@ -88,6 +92,8 @@ public class PlayerController : MonoBehaviour
 
     public void OnAttack(InputAction.CallbackContext context)
     {
+        if (isDead || !canAttack) return; // Prevent attack if dead
+
         if (canAttack)
         {
             if (attack1)
@@ -121,6 +127,8 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
+        if (isDead || !context.started || !touchingDirections.IsGrounded) return; // Prevent jump if dead
+
         if (context.started && touchingDirections.IsGrounded)
         {
             animator.SetTrigger(AnimationStrings.jump);
@@ -129,6 +137,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-  
-
+    // Example method to call when the player dies
+    public void Die()
+    {
+        isDead = true;
+        animator.SetTrigger("Die"); // Trigger death animation if any
+        // You can also handle other death-related logic here (e.g., disable input, show game over screen, etc.)
+    }
 }
