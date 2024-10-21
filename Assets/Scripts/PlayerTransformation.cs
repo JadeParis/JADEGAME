@@ -13,7 +13,6 @@ public class PlayerTransformation : MonoBehaviour
     public bool isAnimating;
 
     public GameObject cutsceneCanvas;
-    public Animation cutsceneAnimation;
 
     Animator currentAnim;
 
@@ -29,15 +28,7 @@ public class PlayerTransformation : MonoBehaviour
 
     private void Update()
     {
-        if (isAnimating)
-        {
-            if (!cutsceneAnimation.isPlaying)
-            {
-                SwapController();
-                cutsceneCanvas.SetActive(false);
-                isAnimating = false;
-            }
-        }
+
     }
 
     public void SwapController()
@@ -47,9 +38,8 @@ public class PlayerTransformation : MonoBehaviour
 
     public void PlayCutscene()
     {
+        Debug.Log("Play Cutscene");
         cutsceneCanvas.SetActive(true);
-        cutsceneAnimation.Play();
-        isAnimating = true;
     }
 
 }

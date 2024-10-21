@@ -10,8 +10,12 @@ public class ASyncLoader : MonoBehaviour
     [SerializeField] private GameObject LoadingScreen;
     [SerializeField] private GameObject MainMenu;
 
-    [Header("Slider")]
-    [SerializeField] private Slider LoadingSlider; 
+  
+
+    private void Awake()
+    {
+        Time.timeScale = 1;
+    }
 
     public void LoadLevelBtn(string LevelToLoad)
     {

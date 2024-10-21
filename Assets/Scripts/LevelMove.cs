@@ -6,16 +6,26 @@ using UnityEngine.SceneManagement;
 public class LevelMove : MonoBehaviour
 {
     public int sceneBuildIndex;
-  
+    public ASyncLoader loader;
 
-        private void OnTriggerEnter2D(Collider2D other)
+    public string levelName;
+
+
+
+    private void OnTriggerEnter2D(Collider2D other)
         {
             print("Trigger Entered");
 
             if (other.CompareTag("Player"))
             {
-                print("Switching Scene to " + sceneBuildIndex);
-                SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+            loader.LoadLevelBtn(levelName);
+
+            //print("Switching Scene to " + sceneBuildIndex);
+            //    SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
             }
         }
+
+
+
+
 }
