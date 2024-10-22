@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: edbe52c1aef814645858a9d124aeb6b4, type: 3}
+      value: {fileID: 21300000, guid: 2a5ea438d5b188549bea4eba7f5c8ffa, type: 3}
     - time: 0.76666665
-      value: {fileID: 21300000, guid: e4953bd9975ff4a40835cd5d92c5234b, type: 3}
+      value: {fileID: 21300000, guid: 2a5ea438d5b188549bea4eba7f5c8ffa, type: 3}
     - time: 1.5
-      value: {fileID: 21300000, guid: c4909c4b430b2a24a9c25ffe4dbacba8, type: 3}
-    - time: 2.1666667
-      value: {fileID: 21300000, guid: c4909c4b430b2a24a9c25ffe4dbacba8, type: 3}
+      value: {fileID: 21300000, guid: 99b3f4b8fd5066c4b8a6c8ffea1d16c8, type: 3}
+    - time: 2.0833333
+      value: {fileID: 21300000, guid: 99b3f4b8fd5066c4b8a6c8ffea1d16c8, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,16 +46,16 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: edbe52c1aef814645858a9d124aeb6b4, type: 3}
-    - {fileID: 21300000, guid: e4953bd9975ff4a40835cd5d92c5234b, type: 3}
-    - {fileID: 21300000, guid: c4909c4b430b2a24a9c25ffe4dbacba8, type: 3}
-    - {fileID: 21300000, guid: c4909c4b430b2a24a9c25ffe4dbacba8, type: 3}
+    - {fileID: 21300000, guid: 2a5ea438d5b188549bea4eba7f5c8ffa, type: 3}
+    - {fileID: 21300000, guid: 2a5ea438d5b188549bea4eba7f5c8ffa, type: 3}
+    - {fileID: 21300000, guid: 99b3f4b8fd5066c4b8a6c8ffea1d16c8, type: 3}
+    - {fileID: 21300000, guid: 99b3f4b8fd5066c4b8a6c8ffea1d16c8, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 2.1833334
+    m_StopTime: 2.1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -75,7 +75,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.083333336
+  - time: 0.16666667
     functionName: MonsterjumpFunction
     data: 
     objectReferenceParameter: {fileID: 0}

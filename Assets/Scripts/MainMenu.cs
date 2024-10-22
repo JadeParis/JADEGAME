@@ -31,6 +31,7 @@ public class MainMenu : MonoBehaviour
 
     public void BackTitle()
     {
+        GameManager.Instance.died = true;
         SceneManager.LoadScene(0);
     }
 
